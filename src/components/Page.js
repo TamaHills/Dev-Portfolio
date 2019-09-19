@@ -15,7 +15,9 @@ export const Page = styled.section`
     overflow-y: auto;
     max-height: 100vh;
     width: 100%;
-    scrollbar-width: none;
+    @media (max-width: 800px) {
+        margin-left: 40px;
+    }
 `
 
 export const Heading = styled.h2`

@@ -64,6 +64,12 @@ export const SideBarDiv = styled.div`
     `}
     ${slideAnimation}
     animation-duration: 500ms;
+    @media (max-width: 800px) {
+        position: fixed;
+        ${props => props.open && `
+        width: 80vw;
+    `}
+    }
 `
 
 export const Description = styled.div`

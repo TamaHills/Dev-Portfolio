@@ -8,12 +8,11 @@ import { SideBarDiv, OpenToggle, Description, Nav, StyledNavLink} from './Sideba
 const { useState, useEffect } = React;
 
 export const SideBar = props => {
-    const [ sideBarOpen, setSideBarOpen ] = useState(window.innerWidth > 700);
+    const [ sideBarOpen, setSideBarOpen ] = useState(window.innerWidth > 800);
 
     useEffect(()=>{
         const handleResize = () => {
-            setSideBarOpen(window.innerWidth > 700)
-            console.log('hello from resize')
+            setSideBarOpen(window.innerWidth > 800);
         } 
         window.addEventListener('resize', handleResize)
         return () => {
