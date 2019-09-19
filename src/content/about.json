@@ -1,0 +1,41 @@
+{
+    "page": [
+        {
+            "component": "Heading",
+            "content": "About"
+        },
+        {
+            "component": "Paragraph",
+            "content": "Full Stack Developer and Enthusiast from Dallas, TX. I enjoy building awesome things. "
+        },
+        {
+            "component": "Heading",
+            "content": "Skills"
+        },
+        {
+            "component": "List",
+            "children": [
+                {
+                    "component": "ListItem",
+                    "content": "JavaScript/TypeScript"
+                },
+                {
+                    "component": "ListItem",
+                    "content": "React/Redux"
+                },
+                {
+                    "component": "ListItem",
+                    "content": "NodeJS/Express"
+                },
+                {
+                    "component": "ListItem",
+                    "content": "Python"
+                },
+                {
+                    "component": "ListItem",
+                    "content": "Go"
+                }
+            ]
+        }
+    ]
+}

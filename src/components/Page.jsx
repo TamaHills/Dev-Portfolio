@@ -1,23 +1,28 @@
 import React from 'react'
 import styled, { keyframes } from 'styled-components';
+import { Link } from './Styles';
 
-const mapper = item => {
+var ID = () => {
+    return '_' + Math.random().toString(36).substr(2, 9);
+};
+
+const Mapper = ({item})=> {
     const Component = Components[item.component];
     return item.children || item.content ? (
         <>
-            <Component>
+            <Component {...item.props}>
                 {item.content}
-                {item.children && item.children.map(mapper)}
+                {item.children && item.children.map(child => (<Mapper key={ID()} item={child} />))}
             </Component>
         </>
-    ) : (<Component />)
+    ) : (<Component key={ID()} {...item.props} />)
 }
 
 
 export const RenderPage = ({ page }) => (
     <Page>
         <Paper>
-            {page.map(mapper)}
+            {page.map(child => (<Mapper key={ID()} item={child} />))}
         </Paper>
     </Page>
 )
@@ -57,7 +62,7 @@ export const Paper = styled.div`
     border-radius: 30px;
     width: 90%;
     background: white;
-    min-height: 80%;
+    min-height: 90%;
     padding: 60px;
     -webkit-box-shadow: 0px 0px 42px 1px rgba(0,0,0,0.36);
     -moz-box-shadow: 0px 0px 42px 1px rgba(0,0,0,0.36);
@@ -65,9 +70,6 @@ export const Paper = styled.div`
     animation-name: ${slideIn};
     animation-duration: 500ms;
     animation-timing-function: ease-in;
-    img {
-        max-width: 30%;
-    }
     * {
         margin: 10px 0;
     }
@@ -90,4 +92,16 @@ export const Paragraph = styled.p`
 
 `
 
-const Components = { ListItem, List, Divider, Paper, Page, Heading, Paragraph };
+export const Image = styled.img`
+    max-width: 350px;
+`
+
+export const Section = styled.section`
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 30px;
+    width: 100%;
+    border-bottom: 1px solid black;
+`
+
+const Components = { ListItem, List, Divider, Paper, Page, Heading, Paragraph, Link, Image, Section };

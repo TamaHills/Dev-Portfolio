@@ -49,6 +49,15 @@ const SlideOpen = keyframes`
     }
 `
 
+const fade = keyframes`
+    from {
+        opacity: 0;
+    }
+    to {
+       opacity: 1;
+    }
+`
+
 const animation = props => css`
     animation-name: ${props.right ? ToTheRight : ToTheLeft};
     left: ${props.left ? 0 : 'unset'};
@@ -82,6 +91,10 @@ export const SideBarDiv = styled.div`
         ${props => props.open && `
         width: 80vw;
     `}
+    }
+    *{
+        animation-name: ${fade};
+        animation-duration: 750ms;
     }
 `
 

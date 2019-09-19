@@ -6,15 +6,8 @@ import { About } from './components/About';
 import { Projects } from './components/Projects'
 import './app.scss'
 
-const { useEffect } = React;
+
 const App = () => {
-    useEffect(() => {
-        const handleScroll = () => {
-            document.body.requestFullscreen();
-        }
-        window.addEventListener('load', handleScroll)
-        return () => window.removeEventListener('load', handleScroll);
-    })
     return (
         <BrowserRouter>
             <div className="App">

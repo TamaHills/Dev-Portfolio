@@ -1,10 +1,10 @@
 import React from 'react';
-import { Page, Paper, Heading, Divider } from './Page';
-import { Link } from './Styles';
-import pokedex from './images/pokedex.png'
-import calculator from './images/calculator.png' 
+import { RenderPage } from './Page';
+import projectsPage from '../content/projects';
 
-export const Projects = props => {
+export const Projects = props => (<RenderPage page={projectsPage}/>)
+
+/* export const Projects = props => {
     return(
         <Page>
             <Paper>
@@ -21,4 +21,4 @@ export const Projects = props => {
             </Paper>
         </Page>
     )
-}
+} */
