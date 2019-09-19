@@ -118,6 +118,9 @@ export const Nav = styled.div`
         ${animation}
         animation-duration: 500ms;   
     }
+    @media (pointer:none), (pointer:coarse) {
+        bottom: 80px;
+    }      
 `
 
 export const OpenToggle = styled.button`
