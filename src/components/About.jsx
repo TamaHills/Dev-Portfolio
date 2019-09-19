@@ -6,7 +6,7 @@ export const About = props => (
         <Paper>
             <Heading>About:</Heading>
             <p>
-                Full Stack Developer form Dallas, TX. 
+                Full Stack Developer from Dallas, TX. 
             </p>
             <Heading>Skills:</Heading>
             <ul>
