@@ -1,16 +1,16 @@
 import React from 'react'
 import styled, { keyframes } from 'styled-components';
-
+import { Link } from './Styles';
 const mapper = item => {
     const Component = Components[item.component];
     return item.children || item.content ? (
         <>
-            <Component>
+            <Component {...item.props}>
                 {item.content}
                 {item.children && item.children.map(mapper)}
             </Component>
         </>
-    ) : (<Component />)
+    ) : (<Component {...item.props}/>)
 }
 
 
@@ -90,4 +90,8 @@ export const Paragraph = styled.p`
 
 `
 
-const Components = { ListItem, List, Divider, Paper, Page, Heading, Paragraph };
+export const Image = styled.img`
+    width: 350px;
+`
+
+const Components = { ListItem, List, Divider, Paper, Page, Heading, Paragraph, Link, Image };
