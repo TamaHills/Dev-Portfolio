@@ -29,6 +29,16 @@ const SlideClosed = keyframes`
     }
 `
 
+const SlideClosedCompact = keyframes`
+    from {
+        width: 80vw;
+        left: 0;
+    }
+    to {
+        left: 0;
+    }
+`
+
 const SlideOpen = keyframes`
     from {
         width: 40px;
@@ -46,7 +56,10 @@ const animation = props => css`
 `
 
 const slideAnimation = props => css`
-    animation-name: ${props.open ? SlideOpen : SlideClosed}
+    animation-name: ${props.open ? SlideOpen : SlideClosed};
+    @media (max-width: 800px) {
+        animation-name: ${props.open ? SlideOpen : SlideClosedCompact};
+    }
 `
 
 export const SideBarDiv = styled.div`
