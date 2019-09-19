@@ -6,7 +6,7 @@ export const Link = styled.a`
     color: black;
     font-family: 'Zilla Slab', serif;
     text-decoration: none;
-    padding: 7px 10px 0;
+    padding: 7px 10px 7px;
     height: 30px;
     text-align: center;
     border: 1px solid #e4b8ff;
