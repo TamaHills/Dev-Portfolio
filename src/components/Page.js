@@ -1,10 +1,21 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
+
+const slideIn = keyframes`
+    from {
+        margin-top: 100%;
+    }
+    to {
+        margin-top: 60px;
+    }
+`
 
 export const Page = styled.section`
+    justify-content: center;
     overflow-x: hidden;
     overflow-y: auto;
     max-height: 100vh;
-    width: 70%;
+    width: 100%;
+    scrollbar-width: none;
 `
 
 export const Heading = styled.h2`
@@ -16,7 +27,7 @@ export const Heading = styled.h2`
 export const Paper = styled.div`
     display: flex;
     flex-direction: column;
-    margin: 60px;
+    margin: 60px auto;
     background: white;
     border-radius: 30px;
     width: 90%;
@@ -26,19 +37,18 @@ export const Paper = styled.div`
     -webkit-box-shadow: 0px 0px 42px 1px rgba(0,0,0,0.36);
     -moz-box-shadow: 0px 0px 42px 1px rgba(0,0,0,0.36);
     box-shadow: 0px 0px 42px 1px rgba(0,0,0,0.36);
+    animation-name: ${slideIn};
+    animation-duration: 500ms;
+    animation-timing-function: ease-in;
     img {
         max-width: 30%;
-    }
-    a {
-        text-decoration: none;
-        font-style: italic;
-        font-weight: 100;
-        color: black;
-        &:hover{
-            text-decoration: underline;
-        }
     }
     * {
         margin: 10px 0;
     }
+`
+export const Divider = styled.div`
+    width: 100%;
+    border-bottom: 1px solid black;
+    height: 5px;
 `
