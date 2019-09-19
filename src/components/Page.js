@@ -65,9 +65,6 @@ export const Paper = styled.div`
     animation-name: ${slideIn};
     animation-duration: 500ms;
     animation-timing-function: ease-in;
-    img {
-        max-width: 30%;
-    }
     * {
         margin: 10px 0;
     }
@@ -91,7 +88,7 @@ export const Paragraph = styled.p`
 `
 
 export const Image = styled.img`
-    width: 350px;
+    max-width: 350px;
 `
 
 const Components = { ListItem, List, Divider, Paper, Page, Heading, Paragraph, Link, Image };
