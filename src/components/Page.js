@@ -1,4 +1,27 @@
+import React from 'react'
 import styled, { keyframes } from 'styled-components';
+
+const mapper = item => {
+    const Component = Components[item.component];
+    return item.children || item.content ? (
+        <>
+            <Component>
+                {item.content}
+                {item.children && item.children.map(mapper)}
+            </Component>
+        </>
+    ) : (<Component />)
+}
+
+
+export const RenderPage = ({ page }) => (
+    <Page>
+        <Paper>
+            {page.map(mapper)}
+        </Paper>
+    </Page>
+)
+
 
 const slideIn = keyframes`
     from {
@@ -54,3 +77,17 @@ export const Divider = styled.div`
     border-bottom: 1px solid black;
     height: 5px;
 `
+
+export const List = styled.ul`
+
+`
+
+export const ListItem = styled.li`
+
+`
+
+export const Paragraph = styled.p`
+
+`
+
+const Components = { ListItem, List, Divider, Paper, Page, Heading, Paragraph };

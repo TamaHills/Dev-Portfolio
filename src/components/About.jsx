@@ -1,7 +1,22 @@
-import React from 'react';
-import { Page, Paper, Heading } from './Page';
+import React from "react";
+import { RenderPage } from "./Page";
 
-export const About = props => (
+const aboutPage = [
+  { component: "Heading", content: "About" },
+  { component: "Paragraph", content: "Full Stack Developer from Dallas, TX." },
+  { component: "Heading", content: "Skills" },
+  { component: "List", children:[
+      {component: "ListItem", content: "JavaScript/TypeScript"},
+      {component: "ListItem", content: "React/Redux"},
+      {component: "ListItem", content: "NodeJS/Express"},
+      {component: "ListItem", content: "Python"},
+      {component: "ListItem", content: "Go"},
+  ]}
+];
+
+export const About = props => <RenderPage page={aboutPage} />;
+
+/* export const About = props => (
     <Page>
         <Paper>
             <Heading>About:</Heading>
@@ -9,13 +24,13 @@ export const About = props => (
                 Full Stack Developer from Dallas, TX. 
             </p>
             <Heading>Skills:</Heading>
-            <ul>
-                <li>JavaScript/TypeScript</li>
-                <li>React/Redux</li>
-                <li>NodeJS/Express</li>
-                <li>Python</li>
-                <li>Go</li>
-            </ul>
+            <List>
+                <ListItem>JavaScript/TypeScript</ListItem>
+                <ListItem>React/Redux</ListItem>
+                <ListItem>NodeJS/Express</ListItem>
+                <ListItem>Python</ListItem>
+                <ListItem>Go</ListItem>
+            </List>
         </Paper>
     </Page>
-)
+) */
