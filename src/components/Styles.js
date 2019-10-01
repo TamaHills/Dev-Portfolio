@@ -1,5 +1,9 @@
 import styled from 'styled-components';
 
+export const colors = {
+    black: "#0e1111"
+}
+
 export const Link = styled.a`
     font-size: 12px;
     margin: 10px 0;

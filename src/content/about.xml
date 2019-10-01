@@ -1,0 +1,13 @@
+<Paper>
+    <Heading>About</Heading >
+    <Paragraph>Full Stack Developer and Enthusiast from Dallas, TX. I enjoy building awesome things.</Paragraph >
+    <Heading>Skill</Heading >
+    <List>
+        <ListItem>JavaScript/TypeScript</ListItem>
+        <ListItem>React/Redux</ListItem>
+        <ListItem>NodeJS/Express</ListItem>
+        <ListItem>Python</ListItem>
+        <ListItem>Go</ListItem>
+    </List>
+    <Image src="calculator" alt="placeholder" />
+</Paper>
