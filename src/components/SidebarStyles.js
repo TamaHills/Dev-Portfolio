@@ -49,13 +49,26 @@ const SlideOpen = keyframes`
     }
 `
 
-const fade = keyframes`
+const fadeIn = keyframes`
     from {
         opacity: 0;
     }
     to {
        opacity: 1;
     }
+`
+
+const fadeOut = keyframes`
+    from {
+        opacity: 1;
+    }
+    to {
+       opacity: 0;
+    }
+`
+
+const fade = props => css`
+    animation-name: ${props.open ? fadeIn : fadeOut};
 `
 
 const animation = props => css`
@@ -92,9 +105,13 @@ export const SideBarDiv = styled.div`
         width: 80vw;
     `}
     }
-    *{
+    * {
         animation-name: ${fade};
         animation-duration: 750ms;
+        opacity: 0;
+        ${props => props.open && `
+            opacity: 1;
+        `}
     }
 `
 
@@ -112,24 +129,37 @@ export const StyledNavLink = styled(NavLink)`
     color: black;
     text-decoration: none;
     z-index: 2;
+    padding: 0;
 `
 
 export const Nav = styled.div`
     position: absolute;
-    bottom: 40px;
+    bottom: 2px;
     height: 30px;
-    width: 90%;
+    width: 100%;
     display: flex;
     justify-content: space-evenly;
+    align-items: center;
     &:after {
         z-index: 0;
         content: '';
         position: absolute;
         height: 100%;
         width: 50%;
-        border-bottom: 1px dotted #e4b8ff;
+        border-bottom: 4px solid #e4b8ff;
         ${animation}
         animation-duration: 500ms;   
+    }
+    &:before {
+        z-index: 0;
+        content: '';
+        position: absolute;
+        height: 100%;
+        width: 50%;
+        ${animation}
+        animation-duration: 500ms;
+        background: lightgray;
+        opacity: 0.2;   
     }
     @media (pointer:none), (pointer:coarse) {
         bottom: 80px;
@@ -160,4 +190,5 @@ export const OpenToggle = styled.button`
     &:focus {
         outline: none;
     }
+    opacity: 1;
 `

@@ -1,25 +1,5 @@
 import React from "react";
-import { RenderPage } from "./Page";
-import { page } from '../content/about.json'
+import { RenderPageXML } from "./Page";
+import xml from "../content/about.xml";
 
-
-export const About = props => <RenderPage page={page} />;
-
-/* export const About = props => (
-    <Page>
-        <Paper>
-            <Heading>About:</Heading>
-            <p>
-                Full Stack Developer from Dallas, TX. 
-            </p>
-            <Heading>Skills:</Heading>
-            <List>
-                <ListItem>JavaScript/TypeScript</ListItem>
-                <ListItem>React/Redux</ListItem>
-                <ListItem>NodeJS/Express</ListItem>
-                <ListItem>Python</ListItem>
-                <ListItem>Go</ListItem>
-            </List>
-        </Paper>
-    </Page>
-) */
+export const About = () => <RenderPageXML xml={xml} />;

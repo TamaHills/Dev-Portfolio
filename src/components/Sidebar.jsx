@@ -3,8 +3,6 @@ import { Link } from './Styles'
 import { SideBarDiv, OpenToggle, Description, Nav, StyledNavLink} from './SidebarStyles'
 
 
-
-
 const { useState, useEffect } = React;
 
 export const SideBar = props => {
@@ -19,10 +17,10 @@ export const SideBar = props => {
             window.removeEventListener('resize', handleResize)
         }
     })
+
     return (
         <SideBarDiv open={sideBarOpen}>
             <OpenToggle onClick={() => setSideBarOpen(!sideBarOpen)}>{sideBarOpen ? 'X' : '>'}</OpenToggle>
-            {sideBarOpen && (<>
             <Description>
                 <h1>Matt M</h1>
                 <sub>Full Stack Web Developer</sub>
@@ -36,7 +34,7 @@ export const SideBar = props => {
                     Projects
                 </StyledNavLink>
             </Nav>
-            </>)}
         </SideBarDiv>
+        
     )
 }

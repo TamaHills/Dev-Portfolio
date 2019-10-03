@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter, Route } from 'react-router-dom';
 import { SideBar } from './components/Sidebar';
 import { About } from './components/About';
-import { Projects } from './components/Projects'
-import './app.scss'
+import { Projects } from './components/Projects';
+import './app.scss';
 
 
 const App = () => {
