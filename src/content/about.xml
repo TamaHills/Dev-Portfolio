@@ -9,5 +9,4 @@
         <ListItem>Python</ListItem>
         <ListItem>Go</ListItem>
     </List>
-    <Image src="calculator" alt="placeholder" />
 </Paper>
